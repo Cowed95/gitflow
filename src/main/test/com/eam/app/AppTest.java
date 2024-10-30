@@ -19,5 +19,23 @@ class AppTest {
         double resultado = App.restar(10, 5);
         assertEquals(5, resultado, 0.001);
     }
+    
+    @Test
+    void testMultiplicar() {
+        double resultado = App.multiplicar(3, 3);
+        assertEquals(9, resultado, 0.001);
+    }
+
+    @Test
+    void testDividir() {
+        double resultado = App.dividir(10, 2);
+        assertEquals(5, resultado, 0.001);
+    }
+
+    @Test
+    void testDividirPorCero() {
+        assertThrows(ArithmeticException.class, () -> App.dividir(10, 0), 
+            "Dividir por cero debería lanzar ArithmeticException");
+    }
 
 }
